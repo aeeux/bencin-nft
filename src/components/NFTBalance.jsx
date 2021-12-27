@@ -29,6 +29,7 @@ function NFTBalance() {
   const { chainId } = useMoralisDapp();
   const { Moralis } = useMoralis();
   const [visible, setVisibility] = useState(false);
+  const [price, setPrice] = useState();
   const [receiverToSend, setReceiver] = useState(null);
   const [amountToSend, setAmount] = useState(null);
   const [nftToSell, setNftToSell] = useState(null);
@@ -122,6 +123,11 @@ function NFTBalance() {
             marginBottom: "15px",
           }}
           alt="NFT for Sale"
+        />
+        <Input
+          autoFocus
+          placeholder="Set Price in MATIC"
+          onChange={(e) => setPrice(e)}
         />
       </Modal>
     </>
